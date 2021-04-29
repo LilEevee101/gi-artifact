@@ -1,0 +1,85 @@
+{
+    "characters": [
+        {
+            "name": "Albedo",
+            "element": "Geo",
+            "weapon": "Sword"
+        },
+        {
+            "name": "Amber",
+            "element": "Pyro",
+            "weapon": "Bow"
+        },
+        {
+            "name": "Barbara",
+            "element": "Hydro",
+            "weapon": "Catalyst"
+        },
+        {
+            "name": "Beidou",
+            "element": "Electro",
+            "weapon": "Claymore"
+        },
+        {
+            "name": "Bennett",
+            "element": "Pyro",
+            "weapon": "Sword"
+        }
+        
+    ],
+    "weapon-types": [
+        "Sword",
+        "Claymore",
+        "Catalyst",
+        "Bow",
+        "Polearm"
+    ],
+    "elements": [
+        "Anemo",
+        "Cryo",
+        "Hydro",
+        "Pyro",
+        "Electro",
+        "Geo",
+        "Dendro"
+    ],
+    "builds": [
+        "Main DPS",
+        "Sub/Burst DPS",
+        "Support"
+    ],
+    "artifacts": [
+        {
+            "name": "Gladiator's Finale",
+            "domain":"Boss",
+            "2pc": "ATK +18%",
+            "4pc": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%.",
+            "min-ar": 0,
+            "desc": ""
+        },
+        {
+            "name": "Wanderer's Trope",
+            "domain":"Boss",
+            "2pc": "Increases Elemental Mastery by 80.",
+            "4pc": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or Bow.",
+            "min-ar": 0,
+            "desc": ""
+        },
+        {
+            "name": "Noblesse Oblige",
+            "domain":"Clear Pool and Mountain Cavern",
+            "2pc": "Elemental Burst DMG +20%",
+            "4pc": "Using an Elemental Burst increases all party members' ATK by 20% for 12s. This effect cannot stack.",
+            "min-ar": 0,
+            "desc": ""
+        },
+        {
+            "name": "Maiden's Beloved",
+            "domain":"Valley of Remembrance",
+            "2pc": "Character Healing Effectiveness +15%",
+            "4pc": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s.",
+            "min-ar": 0,
+            "desc": ""
+        }
+    ]
+}
