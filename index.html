@@ -7,23 +7,45 @@
         crossorigin="anonymous">
         </script>
         <script src="/node_modules/angular/angular.js"></script>
+        <script src="/node_modules/angular-route/angular-route.js"></script>
     </head>
     <body ng-app="app">
-        <div ng-controller="genshinController">
-            <h1>{{pagetitle}}</h1>
-            <ul>
-                <li ng-repeat="character in charlist">{{character.name}}</li>
-            </ul>
-        </div>
+        <div ng-view></div>
 
         <script>
-            angular.module("app", []).controller("genshinController", function($scope,$http) {
+           var app = angular.module("app", ['ngRoute']);
+           app.config(['$routeProvider',  function($routeProvider) {
+               $routeProvider
+               .when("/start",{
+                   templateUrl: "templates/step1.html",
+                   controller: "characterController"
+               })
+               .when("/details",{
+                   templateUrl: "templates/step2.html",
+                   controller: "detailController"
+               })
+               .when("/results",{
+                   templateUrl: "templates/step3.html",
+                   controller: "resultController"
+               })
+               .otherwise({
+                   redirectTo: '/start'
+               })
+           }]);
+           
+           app.controller("characterController", function($scope,$http) {
                 $scope.pagetitle = 'success';
                 
                 $http.get("http://localhost:3000/api/characters")
                 .then(function(response){
                    $scope.charlist = response.data;
                 });
+            });
+            app.controller("detailController", function($scope,$http) {
+                $scope.pagetitle = 'details';
+            });
+            app.controller("resultController", function($scope,$http) {
+                $scope.pagetitle = 'results';
             });
         </script>
 
