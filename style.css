@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo&display=swap');
+
+body {
+    font-family: 'KoHo', sans-serif;
+}
+.detail-section {
+    margin: 10px;
+    padding: 30px;
+    border: 1px solid #ccc;
+}
+.detail-section:hover {
+    background-color: #ddd;
+}

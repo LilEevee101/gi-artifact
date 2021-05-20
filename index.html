@@ -8,6 +8,7 @@
         </script>
         <script src="/node_modules/angular/angular.js"></script>
         <script src="/node_modules/angular-route/angular-route.js"></script>
+        <link href="style.css" rel="stylesheet">
     </head>
     <body ng-app="app">
         <div ng-view></div>
@@ -33,18 +34,38 @@
                })
            }]);
            
-           app.controller("characterController", function($scope,$http) {
+           app.controller("characterController", function($scope,$http,$rootScope) {
                 $scope.pagetitle = 'success';
+                $rootScope.player = {
+                   name: "",
+                   element: "Pyro",
+                   build: "",
+                   weapon: ""
+               }
                 
                 $http.get("http://localhost:3000/api/characters")
                 .then(function(response){
                    $scope.charlist = response.data;
                 });
             });
-            app.controller("detailController", function($scope,$http) {
+            app.controller("detailController", function($scope,$http,$rootScope) {
                 $scope.pagetitle = 'details';
+                    $scope.player = $rootScope.player;
+                    $http.get("http://localhost:3000/api/builds")
+                    .then(function(response){
+                    $scope.buildtypes = response.data;
+                    });
+                    $http.get("http://localhost:3000/api/elements")
+                    .then(function(response){
+                    $scope.elementlist = response.data;
+                    });
+                    $http.get("http://localhost:3000/api/weapons")
+                    .then(function(response){
+                    $scope.weapons = response.data;
+                    });
             });
-            app.controller("resultController", function($scope,$http) {
+            app.controller("resultController", function($scope,$http,$rootScope) {
+                $scope.player = $rootScope.player;
                 $scope.pagetitle = 'results';
             });
         </script>

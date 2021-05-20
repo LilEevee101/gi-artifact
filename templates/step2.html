@@ -1,2 +1,21 @@
 <h1>{{pagetitle}}</h1>
-        <a href="#!/results">blub</a>
+
+<div class="detail-section">
+    <select ng-model="player.build" ng-options="build for build in buildtypes">
+        <option value="">-- choose build type --</option>
+    </select>
+</div>
+<div class="detail-section">
+    <select ng-model="player.element" ng-options="element for element in elementlist">
+        <option value="">-- choose element type --</option>
+    </select>
+</div>
+<div class="detail-section">
+    <select ng-model="player.weapon" ng-options="weapon for weapon in weapons">
+        <option value="">-- choose weapon type --</option>
+    </select>
+</div>
+
+<a href="#!/results" ng-show="player.build && player.element && player.weapon">next</a>
+
+<div>{{player.element}}</div>
