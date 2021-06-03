@@ -1,5 +1,5 @@
 <h1>{{pagetitle}}</h1>
-
+<h2>{{player.name}}</h2>
 <div class="detail-section">
     <select ng-model="player.build" ng-options="build for build in buildtypes">
         <option value="">-- choose build type --</option>
@@ -18,4 +18,4 @@
 
 <a href="#!/results" ng-show="player.build && player.element && player.weapon">next</a>
 
-<div>{{player.element}}</div>
+<a href="#!/start" >back</a>

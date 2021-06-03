@@ -35,22 +35,23 @@
            }]);
            
            app.controller("characterController", function($scope,$http,$rootScope) {
-                $scope.pagetitle = 'success';
-                $rootScope.player = {
-                   name: "",
-                   element: "Pyro",
-                   build: "",
-                   weapon: ""
+                $scope.pagetitle = 'success';             
+               
+               $scope.setcharacter = function(character){
+                   $rootScope.player = character
                }
-                
+
                 $http.get("http://localhost:3000/api/characters")
                 .then(function(response){
                    $scope.charlist = response.data;
                 });
             });
-            app.controller("detailController", function($scope,$http,$rootScope) {
+            app.controller("detailController", function($scope,$http,$rootScope,$location) {
                 $scope.pagetitle = 'details';
                     $scope.player = $rootScope.player;
+                    if (!$scope.player) {
+                        $location.path('/start');  
+                    }
                     $http.get("http://localhost:3000/api/builds")
                     .then(function(response){
                     $scope.buildtypes = response.data;
@@ -67,6 +68,20 @@
             app.controller("resultController", function($scope,$http,$rootScope) {
                 $scope.player = $rootScope.player;
                 $scope.pagetitle = 'results';
+                $http.get("http://localhost:3000/api/artifacts")
+                    .then(function(response){
+                        $scope.artifactlist = response.data;
+                        $scope.choice = $scope.artifactlist.filter (function (arti){
+                            var tags = arti.tags;
+                            var success = tags.filter (function (t){
+                                return t == $scope.player.build;
+                            });
+                            if (success.length > 0){
+                                return arti;
+                            };
+                        });
+                        console.log ($scope.choice);
+                    });
             });
         </script>
 

@@ -1,6 +1,6 @@
 <h1>{{pagetitle}}</h1>
             <ul>
                 <li ng-repeat="character in charlist">
-                    <a href="#!/details">{{character.name}}</a>
+                    <a href="#!/details/" ng-click="setcharacter(character)">{{character.name}}</a>
                 </li>
             </ul>
