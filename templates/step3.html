@@ -1,1 +1,10 @@
 <h1>{{pagetitle}}</h1>
+{{player.name}}
+<br>{{player.build}}
+<br>{{player.element}}
+<br>{{player.weapon}}
+    <ul>
+        <li ng-repeat="result in choices">
+          {{result.artifact.name}}
+        </li>
+    </ul>
