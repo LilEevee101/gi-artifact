@@ -77,34 +77,35 @@
                         var f = $scope.artifactlist.reduce (function (filtered,arti){
                             var tags = arti.tags;
                             var hasbuild = tags.filter (function (t){
-                                return t == $scope.player.build || t == "Any Build";
+                                return t == $scope.player.build;
                             });
-                            var hasweapon = tags.filter (function (t){
-                                return t == $scope.player.weapon || t == "Any Weapon";
-                            });
-                            var haselement = tags.filter (function (t){
-                                return t == $scope.player.element || t == "Any Element";
-                            });
-                            var matches = 0;
                             if (hasbuild.length > 0) {
-                                matches = matches + 1;
-                            }
-                            if (hasweapon.length > 0) {
-                                matches = matches + 1;
-                            }
-                            if (haselement.length) {
-                                matches = matches + 1;
-                            }
-                            
-                            if (matches > 0) {
-                               var result = {
-                                    rank: matches,
-                                    artifact: arti
-                                };
-                                filtered.push (result);
-                            }
+                                var hasweapon = tags.filter (function (t){
+                                return t == $scope.player.weapon;
+                                });
+                                var haselement = tags.filter (function (t){
+                                    return t == $scope.player.element || t == "Any Element";
+                                });
+                                var matches = 0;
+                                if (hasbuild.length > 0) {
+                                    matches = matches + 1;
+                                }
+                                if (hasweapon.length > 0) {
+                                    matches = matches + 1;
+                                }
+                                if (haselement.length) {
+                                    matches = matches + 1;
+                                }
+                                
+                                if (matches > 0) {
+                                    var result = {
+                                        rank: matches,
+                                        artifact: arti
+                                    };
+                                    filtered.push (result);
+                                }  
+                            };
                             return filtered;
-                        
                         },[]);
                         $scope.choices = f.sort(function (a, b) {
                             return b.rank - a.rank;
