@@ -1,6 +1,11 @@
+<div class="row">
 <h1>{{pagetitle}}</h1>
-            <ul>
-                <li ng-repeat="character in charlist">
-                    <a href="#!/details/" ng-click="setcharacter(character)">{{character.name}}</a>
-                </li>
-            </ul>
+    <div class="col-sm-3" ng-repeat="character in charlist">
+        <div class="card mb-2">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{character.name}}</a></h5>
+              <a href="#!/details/" ng-click="setcharacter(character)" class="btn btn-outline-dark w-100">Select</a>
+            </div>
+          </div>
+    </div>
+</div>
