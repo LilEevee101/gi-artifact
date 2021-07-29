@@ -39,7 +39,7 @@
            }]);
            
            app.controller("characterController", function($scope,$http,$rootScope) {
-                $scope.pagetitle = 'success';             
+                $scope.pagetitle = 'Select your character:';             
                
                $scope.setcharacter = function(character){
                    $rootScope.player = character
@@ -51,7 +51,7 @@
                 });
             });
             app.controller("detailController", function($scope,$http,$rootScope,$location) {
-                $scope.pagetitle = 'details';
+                $scope.pagetitle = 'Select your build';
                     $scope.player = $rootScope.player;
                     if (!$scope.player) {
                         $location.path('/start');  
@@ -83,12 +83,12 @@
                             var hasbuild = tags.filter (function (t){
                                 return t == $scope.player.build;
                             });
-                            if (hasbuild.length > 0) {
+                             var haselement = tags.filter (function (t){
+                                    return t == $scope.player.element || t == "Any Element";
+                                });
+                            if (hasbuild.length > 0 && haselement.length >0) {
                                 var hasweapon = tags.filter (function (t){
                                 return t == $scope.player.weapon;
-                                });
-                                var haselement = tags.filter (function (t){
-                                    return t == $scope.player.element || t == "Any Element";
                                 });
                                 var matches = 0;
                                 if (hasbuild.length > 0) {
