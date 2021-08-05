@@ -1,19 +1,29 @@
-<h1>{{pagetitle}}</h1>
-<h2>{{player.name}}</h2>
-<div class="detail-section">
-    <select ng-model="player.build" ng-options="build for build in buildtypes">
-        <option value="">-- choose build type --</option>
-    </select>
+<div class="row">
+    <div class="col">
+        <h1>{{pagetitle}}</h1>
+        <h2>{{player.name}}</h2>
+        <div class="detail-section">
+            <select class="form-select form-select-lg" ng-model="player.build" ng-options="build for build in buildtypes">
+                <option value="">-- choose build type --</option>
+            </select>
+        </div>
+        <div class="detail-section">
+            <select class="form-select form-select-lg " ng-model="player.element" ng-options="element for element in elementlist">
+                <option value="">-- choose element type --</option>
+            </select>
+        </div>
+        <div class="detail-section">
+            <select class="form-select form-select-lg " ng-model="player.weapon" ng-options="weapon for weapon in weapons">
+                <option value="">-- choose weapon type --</option>
+            </select>
+        </div>
+    </div>
 </div>
-<div class="detail-section">
-    <select ng-model="player.element" ng-options="element for element in elementlist">
-        <option value="">-- choose element type --</option>
-    </select>
+<div class="row">
+    <div class="col-sm-6">
+        <a href="#!/start" class="btn btn-outline-dark float-end" >back</a>
+    </div>
+    <div class="col-sm-6">
+        <a href="#!/results" ng-show="player.build && player.element && player.weapon" class="btn btn-outline-dark">next</a>
+    </div>
 </div>
-<div class="detail-section">
-    <select ng-model="player.weapon" ng-options="weapon for weapon in weapons">
-        <option value="">-- choose weapon type --</option>
-    </select>
-</div>
-<a href="#!/start" class="btn btn-outline-dark">back</a>
-<a href="#!/results" ng-show="player.build && player.element && player.weapon" class="btn btn-outline-dark">next</a>

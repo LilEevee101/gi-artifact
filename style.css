@@ -4,10 +4,21 @@ body {
     font-family: 'KoHo', sans-serif;
 }
 .detail-section {
-    margin: 10px;
+    margin-bottom: 10px;
     padding: 30px;
     border: 1px solid #ccc;
+    border-radius: 5px;
 }
 .detail-section:hover {
     background-color: #ddd;
+}
+#charactertitle {
+    font-weight: bold;
+    margin: 0;
+}
+.artifact-info {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }

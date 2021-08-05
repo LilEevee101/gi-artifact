@@ -71,7 +71,7 @@
             });
             app.controller("resultController", function($scope,$http,$rootScope,$location) {
                 $scope.player = $rootScope.player;
-                $scope.pagetitle = 'results';
+                $scope.pagetitle = 'Recommended artifact sets';
                 if (!$scope.player) {
                         $location.path('/start');  
                     }
