@@ -1,18 +1,32 @@
 <div class="row">
-    <h1>{{pagetitle}}</h1>
-    <div class="card my-3" style="width: 18rem;">
-        <div class="card-body">
-          <h5 id="charactertitle" class="card-title">{{player.name}}</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">{{player.build}}</li>
-          <li class="list-group-item">{{player.element}}</li>
-          <li class="list-group-item">{{player.weapon}}</li>
-        </ul>
+    <div class="col">
+        <h1>{{pagetitle}}</h1>
+        <div class="card my-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 id="charactertitle" class="card-title">{{player.name}}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{player.build}}</li>
+                <li class="list-group-item">{{player.element}}</li>
+                <li class="list-group-item">{{player.weapon}}</li>
+            </ul>
       </div>
-    
-    <div class="artifact-info" ng-repeat="result in choices">
-    {{result.artifact.name}}
     </div>
+    
+</div>
+<div class="row">
+    <div class="col-4">
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action" ng-repeat="result in choices">
+                {{result.artifact.name}}
+            </a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
 
+            </div>
+        </div>
+    </div>
 </div>
