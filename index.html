@@ -73,8 +73,12 @@
                 $scope.player = $rootScope.player;
                 $scope.pagetitle = 'Recommended artifact sets';
                 if (!$scope.player) {
-                        $location.path('/start');  
-                    }
+                    $location.path('/start');  
+                }
+                $scope.setartifact = function(artifact){
+                   $scope.artifact = artifact;
+                   console.log (artifact);
+                }
                 $http.get("http://localhost:3000/api/artifacts")
                     .then(function(response){
                         $scope.artifactlist = response.data;

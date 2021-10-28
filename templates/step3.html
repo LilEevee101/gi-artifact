@@ -17,7 +17,7 @@
 <div class="row">
     <div class="col-4">
         <div class="list-group">
-            <a class="list-group-item list-group-item-action" ng-repeat="result in choices">
+            <a class="list-group-item list-group-item-action" ng-repeat="result in choices" ng-click="setartifact(result.artifact)">
                 {{result.artifact.name}}
             </a>
         </div>
@@ -25,7 +25,10 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-
+                <div ng-show="artifact">
+                    <h1>{{artifact.name}}</h1>
+                    <div>{{artifact.tags}}</div>
+                </div>
             </div>
         </div>
     </div>
