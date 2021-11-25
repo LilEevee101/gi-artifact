@@ -23,11 +23,14 @@
         </div>
     </div>
     <div class="col">
-        <div class="card">
+        <div class="card artifact-detail">
             <div class="card-body">
                 <div ng-show="artifact">
                     <h1>{{artifact.name}}</h1>
-                    <div>{{artifact.tags}}</div>
+                    <div>
+                        <span class="badge rounded-pill artifact-tag" ng-repeat="tag in artifact.tags">{{tag}}</span>
+                    </div>
+                    <img src="images/gladiator.png">
                 </div>
             </div>
         </div>

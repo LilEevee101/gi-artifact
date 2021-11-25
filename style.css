@@ -37,3 +37,9 @@ body {
     -webkit-filter: grayscale(0);
     filter: none;
 }
+.artifact-tag {
+    margin: 3px;
+    background-color: #ddd;
+    color: #000;
+    font-weight: 300;
+}
