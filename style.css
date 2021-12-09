@@ -43,3 +43,20 @@ body {
     color: #000;
     font-weight: 300;
 }
+.artifact-detail {
+    border:1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+.artifact-detail h3 small {
+    font-size: 50%;
+    display: block;
+}
+.artifact-detail h3 {
+    margin-top: 2rem;
+}
+.player-row {
+    margin-top: 2rem;
+}
+.button-row {
+    margin-top: 1rem;
+}

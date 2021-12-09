@@ -1,19 +1,20 @@
-<div class="row">
+<h1>{{pagetitle}}</h1>
+<div class="row player-row">
     <div class="col">
-        <h1>{{pagetitle}}</h1>
-        <div class="card my-3" style="width: 18rem;">
-            <div class="card-body">
-                <h5 id="charactertitle" class="card-title">{{player.name}}</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">{{player.build}}</li>
-                <li class="list-group-item">{{player.element}}</li>
-                <li class="list-group-item">{{player.weapon}}</li>
-            </ul>
-      </div>
+        <h5 id="charactertitle" class="card-title">{{player.name}}</h5>
+    </div>
+    <div class="col">
+        {{player.build}}
+    </div>
+    <div class="col">
+        {{player.element}}
+    </div>
+    <div class="col">
+        {{player.weapon}}
     </div>
     
 </div>
+<hr>
 <div class="row">
     <div class="col-4">
         <div class="list-group">
@@ -22,17 +23,37 @@
             </a>
         </div>
     </div>
-    <div class="col">
-        <div class="card artifact-detail">
-            <div class="card-body">
-                <div ng-show="artifact">
-                    <h1>{{artifact.name}}</h1>
-                    <div>
-                        <span class="badge rounded-pill artifact-tag" ng-repeat="tag in artifact.tags">{{tag}}</span>
-                    </div>
+    <div class="col artifact-detail">
+        <div ng-show="artifact">
+            <h1>{{artifact.name}}</h1>
+            <div>
+                <span class="badge rounded-pill artifact-tag" ng-repeat="tag in artifact.tags">{{tag}}</span>
+            </div>
+            <div class="row">
+                <div class="col-4">
                     <img src="images/gladiator.png">
                 </div>
+                <div class="col-8">
+                    <h3>
+                        <small>Region:</small>
+                        {{artifact.region}}
+                    </h3>
+                    <h3>
+                        <small>Domain:</small>
+                        {{artifact.Domain}}
+                    </h3>
+                    <h3>
+                        <small>Minimum AR:</small>
+                        {{artifact.Min-ar}}
+                    </h3>
+                </div>
             </div>
+            <p>{{artifact.desc}}</p>
         </div>
+    </div>
+</div>
+<div class="row button-row">
+    <div class="col-sm-6">
+        <a href="#!/details" class="btn btn-outline-dark float-end" >back</a>
     </div>
 </div>
