@@ -17,7 +17,7 @@
 <hr>
 <div class="row">
     <div class="col-4">
-        <div class="list-group">
+        <div class="list-group artifact-list">
             <a class="list-group-item list-group-item-action" ng-repeat="result in choices" ng-click="setartifact(result.artifact)">
                 {{result.artifact.name}}
             </a>
@@ -31,7 +31,7 @@
             </div>
             <div class="row">
                 <div class="col-4">
-                    <img src="images/gladiator.png">
+                    <img src='{{artifact.imageName | lowercase}}'>
                 </div>
                 <div class="col-8">
                     <h3>
@@ -44,7 +44,7 @@
                     </h3>
                     <h3>
                         <small>Minimum AR:</small>
-                        {{artifact.Min-ar}}
+                        {{artifact['Min-ar']}}
                     </h3>
                 </div>
             </div>

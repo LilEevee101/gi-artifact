@@ -60,3 +60,6 @@ body {
 .button-row {
     margin-top: 1rem;
 }
+.artifact-list a {
+cursor: pointer;
+}

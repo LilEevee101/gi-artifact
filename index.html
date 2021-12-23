@@ -76,8 +76,15 @@
                     $location.path('/start');  
                 }
                 $scope.setartifact = function(artifact){
+                    artifact.imageName = this.cleanName(artifact.name);
                    $scope.artifact = artifact;
                    console.log (artifact);
+                }
+                $scope.cleanName = function(name){
+                    const regex = /([\w\s']+) \[(2pc|4pc)\]/g;
+                    var cleanName = name.replace("'","");
+                    var newName = cleanName.replace(regex, "images/$1.png");
+                    return newName;
                 }
                 $http.get("http://localhost:3000/api/artifacts")
                     .then(function(response){
