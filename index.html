@@ -54,7 +54,7 @@
                    $rootScope.player = character
                }
 
-                $http.get("http://localhost:3000/api/characters")
+                $http.get("https://gi-server.vercel.app/api/characters")
                 .then(function(response){
                    $scope.charlist = response.data;
                 });
@@ -65,15 +65,15 @@
                     if (!$scope.player) {
                         $location.path('/start');  
                     }
-                    $http.get("http://localhost:3000/api/builds")
+                    $http.get("https://gi-server.vercel.app/api/builds")
                     .then(function(response){
                     $scope.buildtypes = response.data;
                     });
-                    $http.get("http://localhost:3000/api/elements")
+                    $http.get("https://gi-server.vercel.app/api/elements")
                     .then(function(response){
                     $scope.elementlist = response.data;
                     });
-                    $http.get("http://localhost:3000/api/weapons")
+                    $http.get("https://gi-server.vercel.app/api/weapons")
                     .then(function(response){
                     $scope.weapons = response.data;
                     });
@@ -95,7 +95,7 @@
                     var newName = cleanName.replace(regex, "images/$1.png");
                     return newName;
                 }
-                $http.get("http://localhost:3000/api/artifacts")
+                $http.get("https://gi-server.vercel.app/api/artifacts")
                     .then(function(response){
                         $scope.artifactlist = response.data;
                         var f = $scope.artifactlist.reduce (function (filtered,arti){
